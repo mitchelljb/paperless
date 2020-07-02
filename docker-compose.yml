@@ -10,7 +10,7 @@ services:
             # modifying the part before the `:`.
             - "8080:8000"
         #healthcheck:
-        #    test: ["CMD", "curl" , "-f", "http://localhost:8080"]
+        #    test: ["CMD", "curl" , "-f", "http://localhost:8000"]
         #    interval: 30s
         #    timeout: 10s
         #    retries: 5
@@ -28,7 +28,7 @@ services:
             - PAPERLESS_OCR_LANGUAGES=deu eng
             - USERMAP_UID=1001
             - USERMAP_GID=1002
-        command: ["runserver", "--insecure", "--noreload", "0.0.0.0:8080"]
+        command: ["runserver", "--insecure", "--noreload", "0.0.0.0:8000"]
 
     consumer:
         image: thepaperlessproject/paperless
